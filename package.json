@@ -21,17 +21,9 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
     "cpp",
     "*.podspec",
     "react-native.config.js",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
@@ -42,8 +34,6 @@
     "example": "yarn workspace react-native-photo-manipulator-example",
     "test": "jest",
     "typecheck": "tsc",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "release": "release-it"
   },
@@ -55,9 +45,7 @@
     "image manipulator",
     "photo editor",
     "photo processing",
-    "photo manipulator",
-    "ios",
-    "android"
+    "photo manipulator"
   ],
   "repository": {
     "type": "git",
@@ -65,10 +53,6 @@
   },
   "author": "Woraphot Chokratanasombat <guhungry@gmail.com> (https://github.com/guhungry)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/guhungry/react-native-photo-manipulator/issues"
-  },
-  "homepage": "https://github.com/guhungry/react-native-photo-manipulator#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -108,73 +92,7 @@
   "workspaces": [
     "example"
   ],
-  "packageManager": "yarn@3.6.1",
-  "jest": {
-    "preset": "react-native",
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!@react-native|react-native|color-)"
-    ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/",
-      "<rootDir>/lib/"
-    ],
-    "setupFilesAfterEnv": [
-      "./jest.setup"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native",
-      "plugin:prettier/recommended"
-    ],
-    "rules": {
-      "react/react-in-jsx-scope": "off",
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
+
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
@@ -199,23 +117,5 @@
         }
       ]
     ]
-  },
-  "codegenConfig": {
-    "name": "RNPhotoManipulatorSpec",
-    "type": "modules",
-    "jsSrcsDir": "src",
-    "outputDir": {
-      "ios": "ios/generated",
-      "android": "android/generated"
-    },
-    "android": {
-      "javaPackageName": "com.guhungry.rnphotomanipulator"
-    },
-    "includesGeneratedCode": false
-  },
-  "create-react-native-library": {
-    "type": "module-mixed",
-    "languages": "kotlin-objc",
-    "version": "0.41.2"
   }
 }
