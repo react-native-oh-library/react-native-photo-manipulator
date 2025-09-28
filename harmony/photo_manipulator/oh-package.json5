@@ -1,0 +1,11 @@
+{
+  "name": "@react-native-oh-tpl/react-native-photo-manipulator",
+  "version": "1.9.2",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "0.72.71"
+  }
+}

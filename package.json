@@ -1,5 +1,8 @@
 {
-  "name": "react-native-photo-manipulator",
+  "name": "@react-native-ohos/react-native-photo-manipulator",
+  "harmony": {
+    "alias": "react-native-photo-manipulator"
+  },
   "version": "1.9.2",
   "description": "React Native Image Processing API to edit photo programmatically for Android and iOS.",
   "source": "./src/index.ts",
@@ -22,6 +25,8 @@
     "src",
     "lib",
     "cpp",
+    "harmony",
+    "package.json",
     "*.podspec",
     "react-native.config.js",
     "!**/__tests__",
@@ -45,12 +50,10 @@
     "image manipulator",
     "photo editor",
     "photo processing",
-    "photo manipulator"
+    "photo manipulator",
+    "harmony"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guhungry/react-native-photo-manipulator.git"
-  },
+  "repository":  "https://github.com/react-native-oh-library/react-native-photo-manipulator",
   "author": "Woraphot Chokratanasombat <guhungry@gmail.com> (https://github.com/guhungry)",
   "license": "MIT",
   "publishConfig": {
