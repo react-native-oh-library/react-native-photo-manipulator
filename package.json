@@ -3,7 +3,7 @@
   "harmony": {
     "alias": "react-native-photo-manipulator"
   },
-  "version": "1.9.2",
+  "version": "1.9.3-rc.1",
   "description": "React Native Image Processing API to edit photo programmatically for Android and iOS.",
   "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
