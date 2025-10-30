@@ -137,7 +137,7 @@ async function saveImage(backgroundPixelMap: image.PixelMap, format: string, qua
 
 function generateCacheFilePath(saveFormat: string | null): string {
   const cacheDir = globalThis.context.cacheDir;
-  let ext = ".jpg";
+  let ext = "jpg";
   if (saveFormat) {
     ext = getFileExtension(saveFormat);
   }
