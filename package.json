@@ -3,7 +3,7 @@
   "harmony": {
     "alias": "react-native-photo-manipulator"
   },
-  "version": "1.9.3-rc.1",
+  "version": "1.9.3-rc.2",
   "description": "React Native Image Processing API to edit photo programmatically for Android and iOS.",
   "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
@@ -57,7 +57,8 @@
   "author": "Woraphot Chokratanasombat <guhungry@gmail.com> (https://github.com/guhungry)",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.0.0",
