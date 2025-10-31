@@ -59,7 +59,7 @@ export function getImageUri(url: string): string {
 export function getFileExtension(format: string): string {
   switch (format) {
     case "image/jpeg":
-      return SaveFormat.jpg;
+      return SaveFormat.jpeg;
     case "image/png":
       return SaveFormat.png;
     default:

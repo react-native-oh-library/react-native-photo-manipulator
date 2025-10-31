@@ -117,7 +117,7 @@ export class PhotoManipulatorTurboModule extends AnyThreadTurboModule{
   }
 
   async optimize(imageUrl: string, quality: number): Promise<string> {
-    if (imageUrl.endsWith(".jpg") || imageUrl.endsWith(".jpeg")) {
+    if (imageUrl.endsWith(".jpg") || imageUrl.endsWith(".jpeg") || imageUrl.endsWith(".webp") || imageUrl.endsWith(".png")) {
       const fileName: string = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
       const imageSRC: RNImageSRC = await obtainImageInfoFromPath(this.resourceManager, imageUrl);
       const decodingOptions: image.DecodingOptions = {

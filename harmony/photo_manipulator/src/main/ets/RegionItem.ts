@@ -69,6 +69,7 @@ export class DefaultConstants {
 export enum SaveFormat {
   png = 'png',
   jpg = 'jpg',
+  jpeg = 'jpeg',
 }
 
 export class ImagePosition{
