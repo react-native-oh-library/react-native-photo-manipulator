@@ -138,17 +138,13 @@ export async function pixelMapToUrl(ctx: AnyThreadTurboModuleContext, pixelMap: 
     let finalFileName = fileName + `_${Date.now()}.${getFileExtension(mimeType)}`;
     let filePath = `${filesDir}/${finalFileName}`;
     let uri: string = "";
-    await imagePacker.packToData(pixelMap, packOptions).then((data: ArrayBuffer) => {
-        //将ArrayBuffer 写入文件
-        let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-        fileIo.writeSync(file.fd, data);
-        fileIo.closeSync(file.fd);
-        //释放资源
-        uri = fileUri.getUriFromPath(filePath);
-        imagePacker.release();
-      }).catch((error: BusinessError) => {
-        imagePacker.release();
-        console.error(`Failed to pack the image.code ${error.code},message is ${error.message}`);
+    let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+    await imagePacker.packToFile(pixelMap, file.fd, packOptions).then(() => {
+      uri = fileUri.getUriFromPath(filePath);
+      imagePacker.release();
+    }).catch((error: BusinessError) => {
+      imagePacker.release();
+      console.error(`Failed to pack the image to file.code ${error.code},message is ${error.message}`);
     })
     return uri;
   } catch (error) {
